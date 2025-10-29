@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML & CSS - Basi 03 - Form HTML</title>
+
+    <link rel="stylesheet" href="../css/general.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <!-- 
+            I form vengono utilizzati per ottenere informaizoni dall'utente, per esempio per permettergli di fare login o la registrazione al sito, o per contattare i proprietari del sito mandadogli un messaggio, o ancora un form di ricerca dove possiamo chiedere all'utente i parametri della sua ricerca.
+
+            Per questo motivop un form è composto da una serie di campi di input nei quali l'utente può immettere le informazioni. In base al tipo di informazione richiesta, servirà un tipo di campo di input specifico che stabiliremo tramite l'attributo type.
+        -->
+
+        <h1>Form HTML</h1>
+
+        <!-- L'attributo action nel tag FORM serve a dire al browser cosa fare una volta che l'utente invia le informazioni -->
+        <form>
+            <!--
+                I tag INPUT sono autoconclusivi e hanno sempre l'attributo type per indicare il genere di dato che ci aspettiamo dall'utente. Per esempio text, che è il più generico, si aspetta una stringa di testo di qualsiasi tipo.
+
+                Di solito si assegna anche un id per poterlo legare alla propria etichetta.
+                È buona norma utilizzare i tag LABEL per etichettare i campi di input, così che il browser e soprattutto l'utente sappiano che tipo di dato ci aspettiamo che venga inserito. Nell'attributo for della LABEL si inserisce l'id dell'input che descrive.
+
+                L'attributo name ha uno scopo simile all'id, ma viene anche utilizzato nel momento in cui il form viene inviato.
+                In HTML il name di un input serve anche a raggruppare parti di un form, come per esempio checkbox e radio button.
+
+                Esistono campi di input che non richiedono all'utente di scrivere qualcosa, ma di selezionare una o più opzioni, come per esempio checkbox, radio button e select.
+
+                La select è un campo di input che permette all'utente di cliccare su di essa per avere un menù a tendina dal quale scegliere il valore da inserire e poi inviare col form.
+                Siccome dobbiamo inserire noi le opzioni della select, questa accetta al suo interno dei tag OPTION, i quali riporteranno le opzioni di valori tra cui scegliere.
+
+                Utilizziamo il tag TEXTAREA per dare all'utente la possibilità di inserire una grande quantità di testo, per esempio nel caso in cui gli chiedessimo di scrivere un messaggio dettagliato al proprietario di un sito o di lasciare una recensione.
+
+                Alla fine metteremo un campo di input di tipo submit, che farà visualizzare un bottone che permetterà all'utente di inviare il form appena compilato. Al click, il browser prenderà il valore all'inbterno dell'attributo action del form (uno script backend) e invierà lì i dati inseriti dall'utente. Non avendo nessuna gestione backend, la pagina verrà refreshata come comportamento di default dell'evento submit.
+            -->
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Scegli uno username" required>
+
+            <label for="mail">Email:</label>
+            <input type="email" id="mail" name="mail" placeholder="Inserisci la tua email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Crea la tua password" required>
+
+            <label for="citta">Città:</label>
+            <select id="citta" name="citta">
+                <option>Seleziona la tua città</option>
+                <option value="TO">Torino</option>
+                <option value="MI">Milano</option>
+                <option value="Roma">Roma</option>
+            </select>
+
+            <span>Seleziona il tuo gender:</span>
+            <input type="radio" id="gender1" name="gender" value="uomo">
+            <label for="gender1" class="radio-label">Uomo</label>
+            <input type="radio" id="gender2" name="gender" value="donna">
+            <label for="gender2" class="radio-label">Donna</label>
+            <input type="radio" id="gender3" name="gender" value="altro">
+            <label for="gender3" class="radio-label">Altro</label>
+
+            <label for="bio">Dicci qualcosa sulla tua vita:</label>
+            <textarea id="bio" name="bio" cols="40" rows="10" placeholder="Parlaci di te..."></textarea>
+
+            <br>
+
+            <input type="reset" value="Cancella tutto">
+            <input type="submit" value="Invia il form e registrati">
+        </form>
+
+        <hr>
+
+        <!-- ----------------------------------------------------------------------- -->
+        <!--                                esercizio                                -->
+        <!-- ----------------------------------------------------------------------- -->
+        <!-- 
+                Crea un form di contatto, nel quale l'utente può contattare l'azienda per mandare un messaggio o una richiesta:
+                    - nome
+                    - cognome
+                    - numero di telefono
+                    - email
+                    - nome dell'azienda
+                    - come vuoi essere ricontattato? (telefono, mail o appuntamento in sede)
+                    - tipo di richiesta (select con 3 opzioni min. es: assistenza, preventivo, ???)
+                    - messaggio
+                    - accettare termini privacy
+                    - invio
+            -->
+
+        <form>
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="cognome">Cognome</label>
+            <input type="text" id="cognome" name="cognome" required>
+
+            <label for="telefono">Numero di telefono</label>
+            <input type="tel" id="telefono" name="telefono">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="azienda">Nome dell'azienda</label>
+            <input type="text" id="azienda" name="azienda">
+
+            <span>Come vuoi essere ricontattato?</span>
+            <input type="radio" id="contact1" name="contact" value="per telefono">
+            <label for="contact1">per telefono</label>
+            <input type="radio" id="contact2" name="contact" value="per mail">
+            <label for="contact2">per mail</label>
+            <input type="radio" id="contact3" name="contact" value="app. in sede">
+            <label for="contact3">app. in sede</label>
+
+            <label for="richiesta">Tipo di richiesta:</label>
+            <select id="richiesta">
+                <option value="assistenza">Assistenza</option>
+                <option value="preventivo">Preventivo</option>
+                <option value="altro">Altro</option>
+            </select>
+
+            <label for="messaggio">Messaggio:</label>
+            <textarea id="messaggio"></textarea>
+
+            <input type="checkbox" id="privacy" name="privacy" required>
+            <label for="privacy">Ho letto e accetto i termini e condizioni che si trovano nella Privacy Policy</label>
+
+            <input type="submit" value="Invia richiesta">
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+/*
+    Se l'HTML serve a creare la struttura di una pagina web, il CSS si occupa di renderla presentabile.
+
+    Per farlo utilizziamo un foglio di stile (style sheet), ovvero un documento che contiene una lista di regole CSS che assegnano uno stile ai nostri elementi HTML.
+
+    Ogni set di regole CSS è composto da:
+        - Selettore -> permette di definire quali elementi devono essere stilizzati
+        - Parentesi graffe -> contengono tutte le regole di stile che gli elementi selezionati devono avere
+        - Dichiarazione -> è una coppia di chiav/valore che definisce come debba essere stilizzto l'elemento selezionato. Composta da:
+            - Proprietà: rappresenta l'aspetto che si desidera modificare
+            - Valore: indica come deve essere modificata la proprietà. I valori possono essere colori, dimensioni, unità di misura, ecc.
+        Una dichiarazione termina sempre col punto e virgola.
+*/
+
+body {
+    min-height: 200vh;
+}
+
+h1 {
+    /* colore del testo */
+    color: orange;
+
+    /* grandezza del testo */
+    font-size: 60px;
+
+    /* colore di sfondo */
+    background-color: slategray;
+
+    /* assegna uno decorazione al testo e ha dei valori prestabiliti come tante altre proprietà */
+    text-decoration: underline;
+
+    /* permette di scegliere la font family del testo */
+    font-family: Arial, Helvetica, sans-serif;
+
+    /* permette di allineare il testo */
+    text-align: center;
+}
+
+p {
+    color: slategray;
+
+    /* determina lo spazio verticale tra le righe di un testo (interlinea) */
+    line-height: 30px;
+
+    /* determina lo spazio tra ogni singola lettera di un testo */
+    letter-spacing: 2px;
+
+    /* suddivide il contenuto in colonne */
+    column-count: 3;
+
+    /* imposta la quantità di spazio tra le colonne */
+    column-gap: 60px;
+}
+
+ul {
+    /* impostare un bordo a un elemento */
+    /* border-width: 4px;
+    border-style: solid;
+    border-color: crimson; */
+
+    /* tutte queste proprietà possono essere abbreviate in un'unica proprietà (shorthand) */
+    /* border: 4px solid crimson; */
+
+    /* posso assegnare un bordo solo a un lato dell'elemento */
+    border-bottom: 4px solid crimson;
+    border-left: 6px dashed crimson;
+    border-right: 8px dotted crimson;
+}
+
+li {
+    /* per gestire l'aspetto dei puntini degli elementi della lista */
+    list-style-type: none;
+
+    /* possiamo dare un'ombra al testo indicando 3 parametri: distanza orizzontale dell'ombra dal testo, distanza verticale e il colore dell'ombra */
+    text-shadow: 2px 2px #bdbdbd;
+
+    color: #0000ff;
+}

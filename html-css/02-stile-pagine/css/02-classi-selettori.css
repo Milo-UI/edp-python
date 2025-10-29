@@ -1,0 +1,40 @@
+/*
+    Abbiamo visto i selettori di tipo, ovvero i selettori che vengono utilizzati per selezionare e applicare stili a tutti gli elementi di un determinato tipo (o tag) all'interno di un documento HTML.
+
+    Se volessimo prendere un singolo P specifico per dargli degli stili a parte, potremmo assegnargli una classe con l'attributo HTML class="" e richiamarla nel foglio di stile con il nome che abbiamo deciso preceduto da un punto.
+*/
+
+p {
+    color: #545454;
+}
+
+/* .error {
+    color: crimson;
+} */
+
+/*
+    Se invece volessimo selezionare solo i paragrafi con la classe erro, dovremmo fare un selettore più specifico
+*/
+p.error {
+    color: crimson;
+}
+
+p.success {
+    color: #07b95a;
+}
+
+p.success.feedback {
+    border: 1px solid #07b95a;
+    padding: 10px;
+}
+
+/*
+    Abbiamo parlato dell'attributo id, che a sua volta può essere utilizzato in CSS come selettore di un elemento (uno solo, visto che l'id è univoco).
+    Converrebbe evitare di usarli in CSS, perché vengono utilizzati spesso per JavaScript, in più hanno una specificità più forte di quella delle classi, quindi le regole ad essi assegnati sono più difficili da sovrascrivere.
+
+    Creiamo un selettore di id come facciamo per le classi, ma invece del punto usiamo il cancelletto.
+*/
+#content {
+    background-color: #ebebeb;
+    padding: 20px;
+}
