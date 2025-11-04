@@ -117,16 +117,41 @@ console.log(string);
 /* -------------------------------------------------------------------------- */
 /* ------------------------------- Esercizio 1 ------------------------------ */
 // Salvare un nome in una variabile e stamparlo in console senza l'iniziale
+let mioNome = "Milo";
+console.log(mioNome.substring(1));
 
 /* ------------------------------- Esercizio 2 ------------------------------ */
 // Data una stringa, stamparla in console al contrario
-// Punti in più se risolta in 2 righr massimo, compreso il console.log()
+// Punti in più se risolta in 2 righe massimo, compreso il console.log()
+let strEs = "Itopi non avevano nipoti";
+let fraseAlContrario = strEs.split("").reverse().join("");
+console.log(fraseAlContrario);
 
 /* ------------------------------- Esercizio 3 ------------------------------ */
 // Elabora uno script per estrarre l'estensione di un file indipendentemente dalla sua lunghezza
 // "immagineBG.jpg" -> "L'estensione del file è: jpg"
+let nomeFile = "immagine.min.css";
+
+console.log("L'estensione del file è: " + nomeFile.slice(nomeFile.lastIndexOf('.')));
+
+let estensione = nomeFile.split('.').pop();
+console.log("L'estensione del file è: " + estensione);
 
 /* ------------------------------- Esercizio 4 ------------------------------ */
 // Elabora uno script per fare la seguente manipolazione:
 // oggi sono a lezione -> Oggi Sono A Lezione
 // Uppercase della prima lettera di ogni singola parola
+let sentence = 'oggi sono a lezione';
+
+let fraseArray = sentence.split(' ');
+let nuovaFrase = "";
+
+for (let i = 0; i < fraseArray.length; i++) {
+    let inizialeMaiusc = fraseArray[i][0].toUpperCase();
+
+    let restoParola = fraseArray[i].substring(1);
+
+    nuovaFrase += inizialeMaiusc + restoParola + ' ';
+}
+
+console.log(nuovaFrase);
