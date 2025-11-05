@@ -72,6 +72,32 @@ console.log(studentiAggiornato);
 
     MINIMO 8 PRODOTTI
 */
-let lista = document.getElementById('lista');
+let prodotti = ['Pane', 'Nutella', 'Biscotti', 'Pasta', 'Carne', 'Insalata', 'Birra', 'Latte'];
+let prezzi = [1.80, 5.66, 2.00, 0.75, 12, 0.90, 2.45, 1];
 
-lista.innerHTML = `<li>Pane</li>`;
+console.log(prodotti[1], prezzi[1]);
+
+// document.getElementById() recupero una porzione di HTML
+let lista = document.getElementById('lista'); // HTMLElement
+let subTotale = document.getElementById('subTot');
+let iva = document.getElementById('iva');
+let totale = document.getElementById('totale');
+
+// Variabile di supporto, inizializzata a 0, che verrà incrementata dal ciclo for
+let sommaPrezzi = 0;
+
+for (let i = 0; i < prodotti.length; i++) {
+    console.log(prodotti[i], prezzi[i]);
+
+    lista.innerHTML += `<li>${prodotti[i]} ${prezzi[i].toFixed(2)}€</li>`;
+
+    sommaPrezzi += prezzi[i];
+}
+
+subTotale.innerHTML = `Subtotale: ${sommaPrezzi.toFixed(2)}€`;
+
+let ivaPagata = sommaPrezzi * 0.22;
+
+iva.innerHTML = `Costo Iva(22%): ${ivaPagata.toFixed(2)}€`;
+
+totale.innerHTML = `<strong>TOTALE: ${((sommaPrezzi + ivaPagata).toFixed(2))}€</strong>`;
